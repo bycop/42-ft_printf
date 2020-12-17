@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 03:16:51 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/10 22:26:04 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:23:05 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,22 @@ int	put_s_2(t_global infos, int l)
 	i = -1;
 	tmp = ft_strdup("(null)\0");
 	l = slen(tmp, infos);
-	while (l++ < infos.precision)
-		ft_putchar(' ');
-	while (tmp[++i])
-		if (infos.flagp == -1 || i < infos.flagp)
-			ft_putchar(tmp[i]);
+	if (infos.flagm)
+	{
+		while (tmp[++i])
+			if (infos.flagp == -1 || i < infos.flagp)
+				ft_putchar(tmp[i]);
+		while (l++ < infos.precision)
+			ft_putchar(' ');
+	}
+	else
+	{
+		while (l++ < infos.precision)
+			ft_putchar(' ');
+		while (tmp[++i])
+			if (infos.flagp == -1 || i < infos.flagp)
+				ft_putchar(tmp[i]);
+	}
 	free(tmp);
 	return (l - 1);
 }
