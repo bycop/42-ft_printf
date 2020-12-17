@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 23:21:46 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/14 11:24:17 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 09:53:05 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,6 @@ int			check_type(const char *str, t_global infos, va_list va, int *ind)
 	if (str[0] == 'X')
 		return (ft_putstr_hex(ft_itoa_base(va_arg(va, int)), infos));
 	if (str[0] == '%')
-		return (ft_putchar_c('%', infos));
+		return (ft_putchar_pourcent('%', infos));
 	return (0);
 }

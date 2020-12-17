@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:06:28 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/10 23:46:36 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 09:58:14 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,9 @@ int			ft_printf(const char *str, ...)
 	va_end(va);
 	return (infos.length);
 }
+/*
+int	main()
+{
+	ft_printf("P: %05%\n");
+	printf("V: %05%");
+}*/

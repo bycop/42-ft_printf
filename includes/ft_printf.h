@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:18:24 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/14 11:19:36 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 09:52:59 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int					ft_printf(const char *str,
 int					ft_putchar(char c);
 int					ft_putnbr(int n);
 int					ft_putstr(char *s);
+int					ft_putchar_pourcent(char c, t_global infos);
 
 /*
 **			Main functions
