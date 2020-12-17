@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 21:09:00 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:00 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:41:35 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,21 @@ char	*ft_itoa_adress(unsigned long long value, int count, char *result)
 	return (result);
 }
 
-char	*ft_itoa_b_a(unsigned long long value)
+char	*ft_itoa_b_a(unsigned long long value, t_global infos)
 {
 	char	*result;
 
 	result = NULL;
-	result = ft_itoa_adress(value, 0, result);
+	if (value == 0 && infos.flagp == 0)
+	{
+		if (!(result = malloc(sizeof(char) * 3)))
+			return (NULL);
+		result[0] = 'x';
+		result[1] = '0';
+		result[2] = '\0';
+	}
+	else
+		result = ft_itoa_adress(value, 0, result);
 	if (result == NULL)
 		return (NULL);
 	return (ft_strrev(result));
@@ -91,7 +100,7 @@ int		put_adress_1(char *s, t_global infos, int l, int type)
 	return (print);
 }
 
-int		ft_putstra(char *s, t_global infos)
+int		f_p(char *s, t_global infos)
 {
 	int l;
 	int print;

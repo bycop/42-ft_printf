@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 23:21:46 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:06 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:41:12 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int			check_type(const char *str, t_global infos, va_list va, int *ind)
 	if (str[0] == 'u')
 		return (ft_put_u(infos, va));
 	if (str[0] == 'p')
-		return (ft_putstra(ft_tolow(ft_itoa_b_a(va_arg(va, intptr_t))), infos));
+		return (f_p(ft_tolow(ft_itoa_b_a(va_arg(va, intptr_t), infos)), infos));
 	if (str[0] == 'x')
 		return (ft_putstr_hex(ft_tolow(ft_itoa_base(va_arg(va, int))), infos));
 	if (str[0] == 'X')

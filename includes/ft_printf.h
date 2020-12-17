@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:18:24 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:14 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:41:23 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ char				*ft_itoa_base(int value);
 /*
 **			%p flag
 */
-int					ft_putstra(char *s, t_global infos);
-char				*ft_itoa_b_a(unsigned long long value);
+int					f_p(char *s, t_global infos);
+char				*ft_itoa_b_a(unsigned long long value, t_global infos);
 
 /*
 **			Mini lib

@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:06:28 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:05 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:38:57 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_global	main_while(const char *str, t_global infos, va_list va)
 		}
 		else
 			infos.length += ft_putchar(str[index]);
-		index++;
+		if (str[index])
+			index++;
 	}
 	return (infos);
 }
