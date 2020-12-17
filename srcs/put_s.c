@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 03:16:51 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 10:23:05 by sfournio         ###   ########.fr       */
+/*   Updated: 2020/12/17 12:59:59 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,18 @@ int	put_s_2(t_global infos, int l)
 	return (l - 1);
 }
 
+int	put_s3(char *s, t_global infos, int l)
+{
+	int i;
+
+	i = -1;
+	while (l++ < infos.precision)
+		ft_putchar('0');
+	while (s[++i] && (infos.flagp == -1 || i < infos.flagp))
+		write(1, &s[i], 1);
+	return (l - 1);
+}
+
 int	ft_putstr_prec(char *s, t_global infos)
 {
 	int i;
@@ -98,8 +110,10 @@ int	ft_putstr_prec(char *s, t_global infos)
 	else if (s == NULL)
 		return (put_s_2(infos, l));
 	l = slen(s, infos);
-	if (!infos.flagm && infos.precision > -1)
+	if (!infos.flagm && infos.precision > -1 && !infos.flagz)
 		return (put_s(s, infos, l, 1));
+	else if (!infos.flagm && infos.flagz && infos.precision > -1)
+		return (put_s3(s, infos, l));
 	else if (infos.flagm)
 		return (put_s(s, infos, l, 0));
 	else
