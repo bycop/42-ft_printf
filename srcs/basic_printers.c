@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:14:43 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/11 01:39:08 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:01:02 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int		ft_putnbr_u(int n)
 	nb = n;
 	if (nb == 0)
 		return (ft_putchar('0'));
-	if (nb < 0)
-		nb = -nb;
 	i = 0;
 	while (nb > 0)
 	{

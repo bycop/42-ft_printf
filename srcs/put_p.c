@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 21:09:00 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/14 11:55:25 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:09:45 by sfournio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,20 @@
 
 char	*ft_itoa_adress(unsigned long long value, int count, char *result)
 {
-	int				sign;
 	char			*base;
 
 	base = "0123456789ABCDEF";
-	sign = 1;
-	if (value < 0 && 16 == 10)
-		sign = -1;
 	if ((value < 16 && 16 != 10) || (16 == 10 && value > -10 && value < 10))
 	{
-		if (16 == 10 && value < 0)
-			count++;
 		if (!(result = malloc(sizeof(char) * (count + 4))))
 			return (NULL);
 		result[count + 1] = 'x';
 		result[count + 2] = '0';
 		result[count + 3] = '\0';
-		if (sign == -1)
-			result[count--] = '-';
 	}
 	else
 		result = ft_itoa_adress(value / 16, count + 1, result);
-	result[count] = base[sign * (value % 16)];
+	result[count] = base[value % 16];
 	return (result);
 }
 
@@ -44,8 +36,6 @@ char	*ft_itoa_b_a(unsigned long long value)
 	char	*result;
 
 	result = NULL;
-	if (value < 0)
-		value = value + 4294967296;
 	result = ft_itoa_adress(value, 0, result);
 	if (result == NULL)
 		return (NULL);
@@ -103,13 +93,11 @@ int		put_adress_1(char *s, t_global infos, int l, int type)
 
 int		ft_putstra(char *s, t_global infos)
 {
-	int i;
 	int l;
 	int print;
 
 	if (!s)
 		return (0);
-	i = -1;
 	print = 0;
 	l = ft_strlen(s);
 	if (infos.flagp == 0 && ft_strlen(s) == 1 && s[0] == '0')
