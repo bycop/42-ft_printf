@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 14:22:54 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 12:59:56 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:31:39 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_itoa_recursive(int val, int count, char *result)
 	value = val;
 	if ((value < 16 && 16 != 10) || (16 == 10 && value > -10 && value < 10))
 	{
-		if (!(result = malloc(sizeof(char) * (count + 2))))
+		result = malloc(sizeof(char) * (count + 2));
+		if (!result)
 			return (NULL);
 		result[count + 1] = '\0';
 	}
@@ -44,9 +45,9 @@ char	*ft_itoa_base(int value)
 	return (ft_strrev(result));
 }
 
-int		put_hex_2(char *s, t_global infos, int l, int type)
+int	put_hex_2(char *s, t_global infos, int l, int type)
 {
-	int print;
+	int	print;
 
 	print = 0;
 	if (type == 1)
@@ -66,10 +67,10 @@ int		put_hex_2(char *s, t_global infos, int l, int type)
 	return (print);
 }
 
-int		put_hex_1(char *s, t_global infos, int l, int type)
+int	put_hex_1(char *s, t_global infos, int l, int type)
 {
-	int print;
-	int i;
+	int	print;
+	int	i;
 
 	i = -1;
 	print = 0;
@@ -93,10 +94,10 @@ int		put_hex_1(char *s, t_global infos, int l, int type)
 	return (print);
 }
 
-int		ft_putstr_hex(char *s, t_global infos)
+int	ft_putstr_hex(char *s, t_global infos)
 {
-	int l;
-	int print;
+	int	l;
+	int	print;
 
 	if (!s)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 03:16:51 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 12:59:59 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:27:24 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	slen(char *s, t_global infos)
 {
-	int j;
+	int	j;
 
 	j = ft_strlen(s);
 	if (infos.flagp > -1)
@@ -34,7 +34,7 @@ int	slen(char *s, t_global infos)
 
 int	put_s(char *s, t_global infos, int l, int type)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (type == 1)
@@ -84,7 +84,7 @@ int	put_s_2(t_global infos, int l)
 
 int	put_s3(char *s, t_global infos, int l)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (l++ < infos.precision)
@@ -96,8 +96,8 @@ int	put_s3(char *s, t_global infos, int l)
 
 int	ft_putstr_prec(char *s, t_global infos)
 {
-	int i;
-	int l;
+	int	i;
+	int	l;
 
 	i = -1;
 	l = 0;

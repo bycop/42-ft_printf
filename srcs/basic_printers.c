@@ -6,19 +6,19 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:14:43 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:07 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 12:57:41 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int		ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long	nb;
 	int		i;
@@ -43,7 +43,7 @@ int		ft_putnbr(int n)
 	return (save);
 }
 
-int		ft_putnbr_u(int n)
+int	ft_putnbr_u(int n)
 {
 	unsigned int	nb;
 	int				i;
@@ -66,9 +66,9 @@ int		ft_putnbr_u(int n)
 	return (save);
 }
 
-int		ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (s[++i])

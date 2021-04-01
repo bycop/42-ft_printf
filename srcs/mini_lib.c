@@ -6,13 +6,13 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 22:50:57 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:04 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:07:22 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	neg;
@@ -42,7 +42,8 @@ char	*ft_strdup(const char *src)
 	char	*str;
 	int		i;
 
-	if (!(str = malloc(sizeof(char) * (ft_strlen(src) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!str)
 		return (NULL);
 	i = -1;
 	while (src[++i])
@@ -51,9 +52,9 @@ char	*ft_strdup(const char *src)
 	return (str);
 }
 
-int		ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

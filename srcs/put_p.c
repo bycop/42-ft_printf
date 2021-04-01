@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 21:09:00 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:41:35 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:27:01 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_itoa_adress(unsigned long long value, int count, char *result)
 	base = "0123456789ABCDEF";
 	if ((value < 16 && 16 != 10) || (16 == 10 && value > -10 && value < 10))
 	{
-		if (!(result = malloc(sizeof(char) * (count + 4))))
+		result = malloc(sizeof(char) * (count + 4));
+		if (!result)
 			return (NULL);
 		result[count + 1] = 'x';
 		result[count + 2] = '0';
@@ -38,7 +39,8 @@ char	*ft_itoa_b_a(unsigned long long value, t_global infos)
 	result = NULL;
 	if (value == 0 && infos.flagp == 0)
 	{
-		if (!(result = malloc(sizeof(char) * 3)))
+		result = malloc(sizeof(char) * 3);
+		if (!result)
 			return (NULL);
 		result[0] = 'x';
 		result[1] = '0';
@@ -51,9 +53,9 @@ char	*ft_itoa_b_a(unsigned long long value, t_global infos)
 	return (ft_strrev(result));
 }
 
-int		put_adress_2(char *s, t_global infos, int l, int type)
+int	put_adress_2(char *s, t_global infos, int l, int type)
 {
-	int print;
+	int	print;
 
 	print = 0;
 	if (type == 1)
@@ -73,10 +75,10 @@ int		put_adress_2(char *s, t_global infos, int l, int type)
 	return (print);
 }
 
-int		put_adress_1(char *s, t_global infos, int l, int type)
+int	put_adress_1(char *s, t_global infos, int l, int type)
 {
-	int print;
-	int i;
+	int	print;
+	int	i;
 
 	i = -1;
 	print = 0;
@@ -100,10 +102,10 @@ int		put_adress_1(char *s, t_global infos, int l, int type)
 	return (print);
 }
 
-int		f_p(char *s, t_global infos)
+int	f_p(char *s, t_global infos)
 {
-	int l;
-	int print;
+	int	l;
+	int	print;
 
 	if (!s)
 		return (0);

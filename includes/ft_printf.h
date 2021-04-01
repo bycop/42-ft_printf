@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:18:24 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:41:23 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:05:08 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef	struct		s_global
+typedef struct s_global
 {
 	int		length;
 	int		flagp;
 	int		flagz;
 	int		flagm;
 	int		precision;
-}					t_global;
+}	t_global;
 
-int					ft_printf(const char *str,
-					...) __attribute__((format(printf,1,2)));
+int					ft_printf(int fd, const char *str, ...);
 
 /*
 **			Basic printers
@@ -41,12 +40,12 @@ int					ft_putchar_pourcent(char c, t_global infos);
 **			Main functions
 */
 t_global			check_flags(const char *str, t_global infos, int *ind,
-					va_list va);
+						va_list va);
 t_global			init_global(t_global infos, int reset);
 t_global			check_prec(const char *str, t_global infos, int *ind,
-					va_list va);
+						va_list va);
 int					check_type(const char *str, t_global infos, va_list va,
-					int *ind);
+						int *ind);
 
 /*
 **			%d %i and %u
@@ -88,5 +87,6 @@ char				*ft_tolow(char *s);
 char				*ft_strrev(char *src);
 int					pointlen(int j, t_global infos);
 char				*little(char *nbr, int i, int *ind);
+t_global			little2(t_global infos);
 
 #endif

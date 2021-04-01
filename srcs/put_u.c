@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 00:45:26 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 12:59:58 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:27:41 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	ft_put_u_2(t_global infos, int nb, int l, int type)
 
 int	ft_put_u_1(t_global infos, int nb, int l, int type)
 {
-	int max;
-	int i;
+	int	max;
+	int	i;
 
 	i = -1;
 	max = 0;
@@ -85,9 +85,9 @@ int	ft_put_u_1(t_global infos, int nb, int l, int type)
 
 int	ft_put_u(t_global infos, va_list va)
 {
-	int nb;
-	int l;
-	int print;
+	int	nb;
+	int	l;
+	int	print;
 
 	print = 0;
 	nb = va_arg(va, int);

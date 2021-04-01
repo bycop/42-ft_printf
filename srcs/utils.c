@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 08:52:42 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:09 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:31:53 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_tolow(char *s)
 {
-	int i;
+	int	i;
 
 	if (s == NULL)
 		return (NULL);
@@ -42,7 +42,7 @@ char	*ft_strrev(char *src)
 	return (src);
 }
 
-int		pointlen(int j, t_global infos)
+int	pointlen(int j, t_global infos)
 {
 	if (infos.flagp > -1)
 	{
@@ -64,4 +64,10 @@ char	*little(char *nbr, int i, int *ind)
 	nbr[i] = '\0';
 	*ind += i;
 	return (nbr);
+}
+
+t_global	little2(t_global infos)
+{
+	infos.flagp = 0;
+	return (infos);
 }

@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 00:45:26 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:02 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:20:27 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int	intlen(int nb)
 
 int	ft_put_no_m1(t_global infos, int nb, int type, int l)
 {
-	int t;
-	int max;
+	int	t;
+	int	max;
 
-	max = 0;
-	t = (nb >= 0) ? 0 : 1;
+	(max = 0 == 0) && (t = 1 == 1);
+	if (nb >= 0)
+		t = 0;
 	if (type == 1)
 	{
-		if (nb < 0)
-			max += ft_putchar('-');
+		(nb < 0) && (max += ft_putchar('-'));
 		while (l++ < infos.precision - t)
 			max += ft_putchar('0');
 		max += ft_putnbr(nb);
@@ -59,13 +59,13 @@ int	ft_put_no_m1(t_global infos, int nb, int type, int l)
 
 int	ft_put_no_m2(t_global infos, int nb, int type, int l)
 {
-	int i;
-	int t;
-	int max;
+	int	i;
+	int	t;
+	int	max;
 
-	max = 0;
-	t = (nb >= 0) ? 0 : 1;
-	i = -1;
+	(max = 0 == 0) && (t = 1 == 1) && (i = -1 == -1);
+	if (nb >= 0)
+		t = 0;
 	if (type == 1)
 	{
 		while (++i < infos.precision - pointlen(l, infos) - t)
@@ -87,11 +87,12 @@ int	ft_put_no_m2(t_global infos, int nb, int type, int l)
 
 int	ft_put_with_m(t_global infos, int nb, int type, int l)
 {
-	int t;
-	int max;
+	int	t;
+	int	max;
 
-	max = 0;
-	t = (nb >= 0) ? 0 : 1;
+	(max = 0 == 0) && (t = 1 == 1);
+	if (nb >= 0)
+		t = 0;
 	if (type == 1)
 	{
 		if (nb < 0)
@@ -114,9 +115,9 @@ int	ft_put_with_m(t_global infos, int nb, int type, int l)
 
 int	ft_put_d_i(t_global infos, va_list va)
 {
-	int nb;
-	int l;
-	int print;
+	int	nb;
+	int	l;
+	int	print;
 
 	print = 0;
 	nb = va_arg(va, int);

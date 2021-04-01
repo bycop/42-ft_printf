@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 03:06:28 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:38:57 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:06:47 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_global	main_while(const char *str, t_global infos, va_list va)
 {
-	int index;
+	int	index;
 
 	index = 0;
 	while (str[index])
@@ -44,15 +44,20 @@ t_global	init_global(t_global infos, int reset)
 	return (infos);
 }
 
-int			ft_printf(const char *str, ...)
+int	ft_printf(int fd, const char *str, ...)
 {
 	va_list		va;
 	t_global	infos;
+	int			back;
 
+	back = dup(STDOUT_FILENO);
+	dup2(fd, STDOUT_FILENO);
 	infos.length = 0;
 	infos = init_global(infos, 1);
 	va_start(va, str);
 	infos = main_while(str, infos, va);
 	va_end(va);
+	dup2(back, STDOUT_FILENO);
+	close(back);
 	return (infos.length);
 }

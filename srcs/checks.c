@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 23:21:46 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:41:12 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:04:58 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ t_global	flagpnbr(const char *str, t_global infos, int *ind, va_list va)
 		i++;
 	if (i > 0)
 	{
-		if (!(nbr = malloc(sizeof(char) * (i + 1))))
+		nbr = malloc(sizeof(char) * (i + 1));
+		if (!nbr)
 			return (infos);
 	}
 	else if (i == 0)
 	{
-		infos.flagp = 0;
-		return (infos);
+		return (little2(infos));
 	}
 	i = -1;
 	while (str[++i] >= '0' && str[i] <= '9')
@@ -74,7 +74,8 @@ t_global	check_prec(const char *str, t_global infos, int *ind, va_list va)
 		i++;
 	if (i > 0)
 	{
-		if (!(nbr = malloc(sizeof(char) * (i + 1))))
+		nbr = malloc(sizeof(char) * (i + 1));
+		if (!nbr)
 			return (infos);
 	}
 	else
@@ -91,7 +92,7 @@ t_global	check_prec(const char *str, t_global infos, int *ind, va_list va)
 
 t_global	check_flags(const char *str, t_global infos, int *ind, va_list va)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((str[i] >= '0' && str[i] <= '9') || str[i] == '-' || str[i] == '.'
@@ -104,7 +105,7 @@ t_global	check_flags(const char *str, t_global infos, int *ind, va_list va)
 		else if (str[i] == '.')
 			infos = flagpnbr(&str[i + 1], infos, &i, va);
 		else if ((((str[i] > '0' && str[i] <= '9') || str[i] == '*')
-			&& str[i - 1] != '.'))
+				&& str[i - 1] != '.'))
 			infos = check_prec(&str[i], infos, &i, va);
 		i++;
 	}
@@ -112,7 +113,7 @@ t_global	check_flags(const char *str, t_global infos, int *ind, va_list va)
 	return (infos);
 }
 
-int			check_type(const char *str, t_global infos, va_list va, int *ind)
+int	check_type(const char *str, t_global infos, va_list va, int *ind)
 {
 	*ind += 1;
 	if (str[0] == 'd' || str[0] == 'i')

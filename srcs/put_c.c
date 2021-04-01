@@ -6,15 +6,15 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 00:45:26 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:03 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:07:40 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchar_c(char c, t_global infos)
+int	ft_putchar_c(char c, t_global infos)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (infos.flagm)
@@ -34,9 +34,9 @@ int		ft_putchar_c(char c, t_global infos)
 	return (ft_putchar(c));
 }
 
-int		ft_putchar_pourcent(char c, t_global infos)
+int	ft_putchar_pourcent(char c, t_global infos)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (infos.flagm)
