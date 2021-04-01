@@ -1,4 +1,4 @@
-# Ft_printf
+# Ft_printf (Norme v3 version)
 
 <p align="center"> 
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/bycop/42-ft_printf">
