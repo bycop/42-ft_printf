@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic_printers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bycop <bycop@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 07:14:43 by sfournio          #+#    #+#             */
-/*   Updated: 2020/12/17 13:00:07 by sfournio         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 07:14:43 by bycop          #+#    #+#             */
+/*   Updated: 2020/12/17 13:00:07 by bycop         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
